@@ -90,3 +90,9 @@ The current version demonstrates basic SPL analysis and visualization. It does n
 ## Author
 
 SOC Analyst learning portfolio project.
+
+## Splunk Dashboard Evidence
+
+The dashboard below summarizes authentication outcomes, failed logins by username, and login activity over time.
+
+![SOC Authentication Investigation Dashboard](evidence/soc-authentication-dashboard.png)
