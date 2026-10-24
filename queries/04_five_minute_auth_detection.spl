@@ -1,0 +1,22 @@
+| makeresults count=4
+| streamstats count AS event_number
+| eval username="admin",
+       src_ip="192.0.2.50",
+       event_action=if(event_number=4,"success","failure"),
+       _time=case(
+           event_number=1,relative_time(now(),"-8m"),
+           event_number=2,relative_time(now(),"-7m"),
+           event_number=3,relative_time(now(),"-6m"),
+           event_number=4,now()
+       )
+| sort 0 _time
+| streamstats time_window=5m
+    count(eval(event_action="failure")) AS failures_in_window
+    count(eval(event_action="success")) AS successes_in_window
+    BY username src_ip
+| eval should_alert=if(
+    failures_in_window>=3 AND successes_in_window>=1,
+    "YES",
+    "NO"
+)
+| table event_number event_action failures_in_window successes_in_window should_alert
