@@ -1,0 +1,8 @@
+index=* sourcetype=csv
+| stats
+    count(eval(event_action="failure")) AS failed_attempts
+    count(eval(event_action="success")) AS successful_attempts
+    BY username src_ip
+| where failed_attempts >= 3 AND successful_attempts >= 1
+| eval severity="Investigate"
+| table username src_ip failed_attempts successful_attempts severity
