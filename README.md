@@ -2,6 +2,26 @@
 
 A beginner-friendly Security Operations Center (SOC) lab demonstrating authentication-event analysis, SPL queries, basic detection logic, dashboard visualizations, and incident documentation.
 
+## Project Highlights
+
+- **SIEM platform:** Splunk Cloud Search & Reporting
+- **Use case:** Repeated authentication failures followed by a successful login
+- **Data source:** Synthetic authentication events imported from CSV
+- **Detection:** SPL query that groups events by username and source IP
+- **Dashboard:** Login outcomes, failed logins by username, and login activity over time
+- **Testing:** Positive and below-threshold detection logic tests
+- **Documentation:** Investigation playbook, test results, and lessons learned
+
+### Key Lab Results
+
+- Sample dataset: 4 events
+- Failed logins: 3
+- Successful logins: 1
+- Positive threshold test: PASS
+- Below-threshold test: PASS
+
+**Scope note:** This is a synthetic learning lab. The results demonstrate query behavior on sample data and do not establish detection effectiveness against real attacks.
+
 ## Project Objectives
 
 - Analyze authentication events using Splunk Search & Reporting.
