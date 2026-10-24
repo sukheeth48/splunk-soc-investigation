@@ -1,0 +1,9 @@
+index=* sourcetype=csv
+| sort 0 _time
+| streamstats time_window=5m
+    count(eval(event_action="failure")) AS failures_in_window
+    count(eval(event_action="success")) AS successes_in_window
+    BY username src_ip
+| where failures_in_window>=3 AND successes_in_window>=1
+| eval severity="Investigate"
+| table _time username src_ip failures_in_window successes_in_window severity
