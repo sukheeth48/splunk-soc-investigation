@@ -1,1 +1,15 @@
-
+| makeresults count=4
+| streamstats count AS event_number
+| eval username="admin",
+    src_ip="192.0.2.50",
+    event_action=if(event_number=4,"success","failure"),
+    event_time=now()-(5-event_number)*60
+| stats
+    count(eval(event_action="failure")) AS failed_attempts
+    count(eval(event_action="success")) AS successful_attempts
+    min(eval(if(event_action="failure",event_time,null()))) AS first_failure
+    max(eval(if(event_action="success",event_time,null()))) AS successful_login
+    BY username src_ip
+| eval elapsed_minutes=round((successful_login-first_failure)/60,1)
+| eval investigation_status=if(failed_attempts>=3 AND successful_attempts>0,"Investigate","Monitor")
+| table username src_ip failed_attempts successful_attempts elapsed_minutes investigation_status
