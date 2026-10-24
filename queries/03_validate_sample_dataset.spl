@@ -1,0 +1,15 @@
+index=* sourcetype=csv
+| stats
+    count AS total_events
+    count(eval(event_action="failure")) AS failed_attempts
+    count(eval(event_action="success")) AS successful_attempts
+    BY username src_ip
+| eval expected_total=4
+| eval validation=if(
+    total_events=expected_total
+    AND failed_attempts=3
+    AND successful_attempts=1,
+    "PASS",
+    "CHECK"
+)
+| table username src_ip total_events failed_attempts successful_attempts validation
