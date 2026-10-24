@@ -116,3 +116,10 @@ SOC Analyst learning portfolio project.
 The dashboard below summarizes authentication outcomes, failed logins by username, and login activity over time.
 
 ![SOC Authentication Investigation Dashboard](evidence/soc-authentication-dashboard.png)
+
+### Five-Minute Authentication Detection
+
+The dashboard panel displays authentication events that meet the detection threshold of at least three failed attempts and one successful login within a five-minute rolling window.
+
+![Five-Minute Authentication Detection](evidence/soc-authentication-detection-panel.png)
+
