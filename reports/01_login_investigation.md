@@ -43,5 +43,4 @@ This pattern may indicate password guessing or another authentication issue. How
 This exercise demonstrates SPL searching, aggregation, event sequencing and basic detection logic. It does not demonstrate ingestion of real Windows logs, threat-intelligence enrichment, or a confirmed security incident.
 
 ## 7. Conclusion
-
 The simulated login pattern meets the example threshold of three failures followed by a success and warrants further investigation. Additional evidence would be required to determine whether the activity is malicious.
