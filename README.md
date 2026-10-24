@@ -95,4 +95,4 @@ SOC Analyst learning portfolio project.
 
 The dashboard below summarizes authentication outcomes, failed logins by username, and login activity over time.
 
-![SOC Authentication Investigation Dashboard](evidence/soc-authentication-dashboard.png)
+![SOC Authentication Investigation Dashboard](soc-authentication-dashboard.png)
