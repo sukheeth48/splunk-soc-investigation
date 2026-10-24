@@ -16,7 +16,14 @@ Verify that the detection requiring repeated failures followed by a successful l
 The detection should not trigger because the condition requires at least three failures and at least one success for the same username and source IP within the configured five-minute window.
 
 ## Current Status
-DOCUMENTED — this test plan has not yet been executed in Splunk.
+## Actual Result
+PASS — executed in Splunk using temporary synthetic events. The query returned 3 failed attempts, 0 successful attempts, and `should_alert=NO`.
+
+## Evidence
+The detection condition was not met because no successful authentication event existed. The test used events generated with `makeresults` and did not modify the imported CSV dataset.
+
+## Validation Status
+EXECUTED — this result verifies the stated condition for this test case only.
 
 ## Why This Matters
 Repeated failures can be suspicious, but this particular detection is designed to identify a sequence that includes a subsequent successful login. Other detections may be appropriate for repeated failures without a success.
