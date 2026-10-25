@@ -123,3 +123,10 @@ The dashboard panel displays authentication events that meet the detection thres
 
 ![Five-Minute Authentication Detection](evidence/soc-authentication-detection-panel.png)
 
+### Splunk Alert Execution Evidence
+
+The screenshot below demonstrates the saved authentication detection alert's execution results in Splunk. The tested synthetic scenario produced three failed login attempts and one successful login within the configured detection window.
+
+![Splunk Alert Execution Results](evidence/soc-alert-execution-results.png)
+
+**Note:** This is a demonstration using historical synthetic authentication data, not live security monitoring.
