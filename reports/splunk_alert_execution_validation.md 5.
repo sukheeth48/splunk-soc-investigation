@@ -1,0 +1,23 @@
+# Splunk Alert Execution Validation
+
+## Objective
+Verify that the saved Splunk authentication detection alert executes and records its results.
+
+## Alert Configuration
+- **Name:** SOC - Repeated Login Failures Followed by Success
+- **Status:** Enabled
+- **Schedule:** Hourly
+- **Trigger condition:** Number of results greater than zero
+- **Trigger action:** Add to Triggered Alerts
+
+## Validation Results
+- The alert appeared in Splunk's alert details page.
+- Trigger History contained multiple execution entries.
+- The latest execution's View Results page showed three failed attempts and one successful login.
+- The matching result met the configured detection threshold.
+
+## Status
+**PASS — Alert execution and result retrieval verified.**
+
+## Limitations
+The alert uses historical synthetic CSV data and may repeatedly match the same events. This demonstrates Splunk alert configuration and result retrieval; it does not represent live authentication monitoring or prove production readiness.
