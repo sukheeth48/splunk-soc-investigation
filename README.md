@@ -38,6 +38,18 @@ A beginner-friendly Security Operations Center (SOC) lab demonstrating authentic
 - GitHub — source control and project documentation
 - CSV — sample authentication dataset
 
+## Skills Demonstrated
+
+- **SIEM:** Splunk Search & Reporting, SPL, dashboard creation, and alert configuration.
+- **Security Monitoring:** Authentication event analysis, failed-login investigation, and detection logic.
+- **Detection Engineering:** Five-minute rolling-window logic, threshold-based detection, and event grouping.
+- **Detection Testing:** Positive and negative testing, time-window validation, and username/source-IP isolation.
+- **Incident Response:** Alert triage workflows, investigation evidence checklists, and incident documentation.
+- **MITRE ATT&CK:** Mapping detection scenarios to relevant techniques while documenting limitations.
+- **Documentation:** Test reports, validation results, investigation notes, and reproducible project instructions.
+
+*This is a learning project using synthetic authentication data. It demonstrates foundational SIEM investigation skills and does not represent production security monitoring experience.*
+
 ## Investigation Scenario
 
 The lab uses four synthetic authentication events for the `admin` account:
